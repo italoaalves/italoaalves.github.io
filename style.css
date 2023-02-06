@@ -1,0 +1,176 @@
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-image: url(./image/bg.png);
+  background-size: 100% 20%;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  padding: 0 1em;
+}
+
+#welcome-section {
+  color: #333;
+  display: grid;
+  place-items: center;
+  height: 50vh;
+}
+
+#welcome-section h1 {
+  font-size: 5em;
+  margin-bottom: 0;
+}
+
+#welcome-section p {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 0;
+  color: royalblue;
+}
+
+#navbar {
+  top: 0;
+  padding: 0 2em;
+  display: flex;
+  justify-content: end;
+  position: fixed;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+}
+
+#navbar ul {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+  padding: 0;
+}
+
+#navbar ul li {
+  margin: 0;
+  padding: 0;
+}
+
+#navbar ul li a {
+  font-size: 1.2em;
+  color: royalblue;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: border 0.1s;
+}
+
+#navbar ul li a:hover {
+  border-bottom: 2px solid royalblue;
+}
+
+.my-name {
+  color: #3EB489;
+}
+
+.projects-container {
+  display: grid;
+  margin-inline: auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 2em;
+  margin-block: 3em;
+  max-width: 1366px;
+}
+
+.project-tile {
+  color: black;
+  text-decoration: none;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 0 2em 1em;
+  box-sizing: border-box;
+  border: 2px solid white;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s;
+}
+
+.project-tile .project-title {
+  color: royalblue;
+}
+
+.project-tile .project-description {
+  color: black;
+}
+
+.project-tile .project-img {
+  width: 100%;
+  border-radius: 10px;
+  filter: grayscale(1);
+}
+
+.project-tile p {
+  text-align: justify;
+}
+
+.project-tile:hover {
+  border: 2px solid royalblue;
+}
+
+.project-tile:hover > img {
+  filter: grayscale(0);
+}
+
+footer {
+  background: royalblue;
+  margin: 0;
+  padding: 0;
+}
+
+.social {
+  color: white;
+  display: grid;
+  place-items: center;
+}
+
+.social ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 2em;
+}
+
+.social ul li a {
+  color: white;
+  font-size: 5em;
+}
+
+.social ul li a:hover {
+  color: purple;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-size: 100%;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .projects-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
