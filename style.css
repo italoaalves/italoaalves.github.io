@@ -1,9 +1,10 @@
 :root {
-  --accent: #5c9c5c;
-  --secondary: #c9bcb4;
-  --danger: #591a4c;
-  --white: #ebddda;
-  --text: #404140;
+  --accent: #47b64b;
+  --secondary: #56787a;
+  --pop: #cb593a;
+  --white: #dbd4ca;
+  --light: #bbb4aa;
+  --text: #262640;
 }
 
 html {
@@ -23,6 +24,10 @@ body {
   box-sizing: border-box;
 }
 
+section {
+  padding-top: 5vh;
+}
+
 header {
   padding: 0;
   margin: 0;
@@ -34,7 +39,7 @@ main {
 
 #about-me {
   text-decoration: none;
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--light);
   border-radius: 10px;
   padding: 2em;
   box-sizing: border-box;
@@ -47,11 +52,11 @@ main {
 #welcome-section {
   display: grid;
   place-items: center;
-  height: 50vh;
+  min-height: 50vh;
 }
 
 #welcome-section h1 {
-  font-size: 3em;
+  font-size: 4.5em;
   margin-bottom: 0;
 }
 
@@ -60,6 +65,7 @@ main {
   font-size: 2em;
   margin-top: 0;
   color: var(--accent);
+  font-family: monospace;
 }
 
 #navbar {
@@ -100,7 +106,7 @@ main {
 }
 
 .my-name {
-  color: var(--danger);
+  color: var(--pop);
 }
 
 .profile-picture {
@@ -118,7 +124,7 @@ main {
   max-width: 1366px;
 }
 
-.session-title {
+.section-title {
   color: #1c5c48;
   text-align: center;
 }
@@ -126,7 +132,7 @@ main {
 .project-tile {
   color: black;
   text-decoration: none;
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--light);
   border-radius: 10px;
   padding: 0 2em 1em;
   box-sizing: border-box;
@@ -171,7 +177,7 @@ main {
 }
 
 footer {
-  background: var(--accent);
+  background: var(--secondary);
   margin: 0;
   padding: 0;
 }
@@ -195,7 +201,34 @@ footer {
 }
 
 .social ul li a:hover {
-  color: var(--danger);
+  color: var(--pop);
+}
+
+p.caret-underscore {
+  padding-bottom: 1em;
+  position: relative;
+  max-width: max-content;
+}
+
+p.caret-underscore > span {
+  position: relative;
+  animation: blink 1s step-end infinite;
+  border-bottom: 2px solid var(--accent);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--accent);
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -230,5 +263,21 @@ footer {
     flex-direction: row;
     gap: 6em;
     align-items: center;
+  }
+
+  #welcome-section p {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(42, end);
+  }
+
+  p.caret-underscore {
+    padding-right: 1ch;
+  }
+
+  p.caret-underscore > span {
+    position: absolute;
+    right: 0;
   }
 }
