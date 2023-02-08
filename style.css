@@ -1,7 +1,7 @@
 :root {
   --accent: #47b64b;
   --secondary: #56787a;
-  --pop: #cb593a;
+  --pop: #618fad;
   --white: #dbd4ca;
   --light: #bbb4aa;
   --text: #262640;
@@ -26,6 +26,7 @@ body {
 
 section {
   padding-top: 5vh;
+  margin-inline: 1ch;
 }
 
 header {
@@ -39,17 +40,14 @@ main {
 
 #about-me {
   text-decoration: none;
-  border: 2px solid var(--light);
-  border-radius: 10px;
   padding: 2em;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
   margin-block: 3em;
   margin-inline: auto;
   max-width: 1366px;
 }
 
 #welcome-section {
+  text-align: center;
   display: grid;
   place-items: center;
   min-height: 50vh;
@@ -57,13 +55,12 @@ main {
 
 #welcome-section h1 {
   font-size: 4.5em;
-  margin-bottom: 0;
 }
 
 #welcome-section p {
   text-align: left;
   font-size: 2em;
-  margin-top: 0;
+  margin-top: 1em;
   color: var(--accent);
   font-family: monospace;
 }
@@ -77,7 +74,7 @@ main {
   width: 100vw;
   box-sizing: border-box;
   background-color: var(--white);
-  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid var(--light);;
   z-index: 999;
 }
 
@@ -109,7 +106,12 @@ main {
   color: var(--pop);
 }
 
+.headline {
+  background-color: var(--text);
+}
+
 .profile-picture {
+  width: 60%;
   border-radius: 50%;
   image-rendering: pixelated;
 }
@@ -129,26 +131,27 @@ main {
   text-align: center;
 }
 
-.project-tile {
-  color: black;
+.card {
+  color: var(--text);
   text-decoration: none;
   border: 2px solid var(--light);
   border-radius: 10px;
   padding: 0 2em 1em;
   box-sizing: border-box;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 1ch 1ch 0 0 rgba(0, 0, 0, 0.1);
   transition: border 0.3s;
 }
 
-.project-tile .project-title {
-  color: #002a33;
+.card > .card-title {
+  color: var(--accent);
+  padding: 1ch;
 }
 
-.project-tile .project-description {
+.card > .card-description {
   color: #404140;
 }
 
-.project-tile .project-img {
+.card > .card-img {
   width: 100%;
   border-radius: 10px;
   filter: grayscale(1);
@@ -156,21 +159,23 @@ main {
   height: 16rem;
 }
 
-.project-tile p {
+.card p {
   text-align: justify;
 }
 
-.project-tile:hover {
+.card:hover {
   border: 2px solid var(--accent);
 }
 
-.project-tile:hover > img {
+.card:hover > img {
   filter: grayscale(0);
 }
 
 .about-me-body {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: justify;
   margin-top: 3em;
   gap: 1em;
@@ -205,12 +210,12 @@ footer {
 }
 
 p.caret-underscore {
-  padding-bottom: 1em;
+  padding: 2ch;
   position: relative;
   max-width: max-content;
 }
 
-p.caret-underscore > span {
+p.caret-underscore > span:last-child {
   position: relative;
   animation: blink 1s step-end infinite;
   border-bottom: 2px solid var(--accent);
@@ -273,11 +278,11 @@ p.caret-underscore > span {
   }
 
   p.caret-underscore {
-    padding-right: 1ch;
+    padding: 2ch;
   }
 
-  p.caret-underscore > span {
+  p.caret-underscore > span:last-child {
     position: absolute;
-    right: 0;
+    right: 1ch;
   }
 }
